@@ -1,10 +1,4 @@
 # Starter pipeline
-- task: UiPathRunJob@4
-  inputs:
-    orchestratorConnection: 'Connection_Orch_Devops'
-    processName: 'DevOps_UIPath_Test_1June'
-    folderName: 'Test'
-    user: 'americas\124859'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -13,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+ AnujTest
 
 steps:
 - script: echo Hello, world!
@@ -23,3 +17,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: UiPathRunJob@4
+  inputs:
+    orchestratorConnection: 'Connection_Orch_Devops'
+    processName: 'DevOps_UIPath_Test_1June'
+    folderName: 'Test'
+    user: 'americas\124859'
